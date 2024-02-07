@@ -1,0 +1,116 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #fff;
+    height: 100vh; /* Full height */
+
+}
+
+header{
+    background-color: #fff;
+    /* background-color: rgba(147,197,253,1); */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Horizontal offset, vertical offset, blur radius, color */
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #2a2a2a;
+}
+.navbar{
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+}
+
+.nav-branding{
+    font-size: 1.5rem;
+}
+.nav-link{
+    transition: 0.7s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.nav-link:hover{
+    color: #08ac94;
+    /* color: #d8f4ec; */
+}
+
+.hamburger-menu{
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #2a2a2a;
+}
+
+
+
+@media(max-width:768px){
+    .hamburger-menu{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        background-color: #fff;
+    /* background-color: rgba(147,197,253,1); */
+
+        text-align: center;
+        transition: 0.3s;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    .nav-menu.active{
+        left: 0;
+    }
+}
+@media (min-width: 769px) {
+    /*if the screen size is greater than 769px, hide the hamburger menu*/
+    .bar {
+        display: none;
+    }
+}
+
