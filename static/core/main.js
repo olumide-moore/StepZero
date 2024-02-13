@@ -78,7 +78,7 @@ function step2Clicked(event) {
     if (addressValue) {
         fetch(`/step2/?address=${addressValue}`)
             .then(response => response.json()).then(data => {
-                console.log("data");
+                console.log(data);
             }).catch(error => {
                 console.error('Error fetching data:', error)});    
     }
